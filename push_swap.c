@@ -14,16 +14,18 @@ int main(int ac, char **av)
 {
     t_node * number;
     char *argss;
-    
+
     argss = ft_strjoin(ac-1,av+1, " ");
     if (ac >= 2 && validate_numbers(argss)) // string dizisinde int değerler verilmiş demek
     {
         number = parse_args(argss);
-        while (number)
-        {
-            printf("num %i\n",number->value);
-            number = number->next;
-        }
+        free(argss);
     }   
+    while (number)
+    {
+        printf("num %i\n", number->value);
+        number = number->next;
+    }
+    
 }
 

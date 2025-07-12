@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <limits.h> // INT_MIN, INT_MAX
 
+//linkedlist
 typedef struct s_node
 {
 	int				value;

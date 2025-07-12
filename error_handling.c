@@ -3,25 +3,24 @@
 
 unsigned long validate_numbers(char *arg)
 {
-	char *ptr = arg;
 	char *endptr;
 	long value;
 
-	if (!*ptr)
+	if (!*arg)
 		return	((unsigned long)error_msg());
-	while (*ptr)
+	while (*arg)
 	{
-		while (*ptr == ' ')
-			ptr++;
-		if (*ptr)
+		while (*arg == ' ')
+			arg++;
+		if (*arg)
 		{
-			value = ft_strtol(ptr, &endptr);
-            if (endptr == ptr)
+			value = ft_strtol(arg, &endptr);
+            if (endptr == arg)
                 return ((unsigned long)error_msg()); //sayı okunmazsa örnek "abc" burada endptr mevcut ptr gösterirse çünkü strtol ilerlemicek
 			if (value < INT_MIN || value > INT_MAX)
 				return ((unsigned long)error_msg());
-			ptr = endptr;
-            if (*ptr && *ptr != ' ')
+			arg = endptr;
+            if (*arg && *arg != ' ')
                 return ((unsigned long)error_msg());
 		}
 	}

@@ -1,7 +1,7 @@
 
 #include "push_swap.h"
 
-int	ft_strlens(char **strs, int size)
+static int	ft_strlens(char **strs, int size)
 {
 	int	i;
 	int	j;
@@ -23,7 +23,7 @@ int	ft_strlens(char **strs, int size)
 	return (len_strs);
 }
 
-int	ft_strlen(char *str)
+static int	ft_strlen(char *str)
 {
 	int	i;
 
@@ -33,7 +33,7 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-void	ft_add_sep(char *result, char *sep, int *k)
+static void	ft_add_sep(char *result, char *sep, int *k)
 {
 	int	i;
 
@@ -46,7 +46,7 @@ void	ft_add_sep(char *result, char *sep, int *k)
 	}
 }
 
-char	*ft_fill_result(char **strs, char *result, int size, char *sep)
+static char	*ft_fill_result(char **strs, char *result, int size, char *sep)
 {
 	int	i;
 	int	j;
