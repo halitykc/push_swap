@@ -12,7 +12,7 @@
 
 int main(int ac, char **av)
 {
-    if (ac == 2 && validate_numbers(av[1])) // string dizisinde int değerler verilmiş demek
+    if (ac ==2 && validate_numbers(av[1])) // string dizisinde int değerler verilmiş demek
     {
         t_node * number;
         number = parse_args(av[1]);
@@ -21,10 +21,6 @@ int main(int ac, char **av)
             printf("num %i\n",number->value);
             number = number->next;
         }
-    }
-    else
-    {
-        printf("HATA!\n");
     }
 
 }

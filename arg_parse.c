@@ -26,30 +26,12 @@ long	ft_strtol(const char *str, char **endptr)
 	return result * sign;
 }
 
-static int	wc(char *str)
-{
-    int	count = 0;
-    int	i = 0;
-
-    while (str[i])
-    {
-		while (str[i] && str[i] == ' ')
-			i++;
-		if (str[i] && str[i] != ' ')
-		{
-			count++;
-			while (str[i] && str[i] != ' ')
-				i++;
-		}
-    }
-    return (count);
-}
-
 t_node *parse_args(char *arg)
 {
 	t_node	*head;
 	t_node	*new;
 	char	*endptr;
+	long value;
 
 	head = NULL;
 	while (*arg)
@@ -58,9 +40,10 @@ t_node *parse_args(char *arg)
 			arg++;
 		if (*arg)
 		{
+			value = ft_strtol(arg, &endptr);
 			new = ft_lstnew(ft_strtol(arg, &endptr));
-			if (!new)
-				return NULL; // Hata yönetimi eklenmeli
+			if (!new || has_duplicate(head, (int)value))
+				return (error_msg()); // Hata yönetimi eklenmeli
 			ft_lstadd_back(&head, new);
 			arg = endptr;
 		}

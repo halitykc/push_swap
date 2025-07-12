@@ -24,7 +24,9 @@ long	ft_strtol(const char *str, char **endptr);
 
 
 // error handling
-int validate_numbers(char *arg);
+unsigned long validate_numbers(char *arg);
+int	has_duplicate(t_node *head, int value);
+void	*error_msg(void);
 
 
 #endif
