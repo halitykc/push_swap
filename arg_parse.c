@@ -26,7 +26,7 @@ long	ft_strtol(const char *str, char **endptr)
 	return result * sign;
 }
 
-t_node *parse_args(char *arg)
+t_node	*parse_args(char *arg)
 {
 	t_node	*head;
 	t_node	*new;
@@ -47,6 +47,33 @@ t_node *parse_args(char *arg)
 			ft_lstadd_back(&head, new);
 			arg = endptr;
 		}
+	}
+	return head;
+}
+
+t_node	*parse_args_from_argv(int argc, char **argv)
+{
+	t_node	*head = NULL;
+	t_node	*new;
+	long	value;
+	int		i = 1;
+
+	while (i < argc)
+	{
+		char *endptr;
+	
+		value = ft_strtol(argv[i], &endptr);
+		if (endptr == argv[i] || *endptr != '\0')
+			return (error_msg());
+		if (value < INT_MIN || value > INT_MAX)
+			return (error_msg());
+		if (has_duplicate(head, (int)value))
+			return (error_msg());
+		new = ft_lstnew((int)value);
+		if (!new)
+			return (error_msg());
+		ft_lstadd_back(&head, new);
+		i++;
 	}
 	return head;
 }

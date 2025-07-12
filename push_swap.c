@@ -12,15 +12,19 @@
 
 int main(int ac, char **av)
 {
-    if (ac ==2 && validate_numbers(av[1])) // string dizisinde int değerler verilmiş demek
-    {
-        t_node * number;
-        number = parse_args(av[1]);
-        while (number)
-        {
-            printf("num %i\n",number->value);
-            number = number->next;
-        }
-    }
+    t_node * number;
 
+    if (ac == 2 && validate_numbers(av[1])) // string dizisinde int değerler verilmiş demek
+    {
+        number = parse_args(av[1]);
+    }
+    else if (ac > 2)
+    {
+        number = parse_args_from_argv(ac,av);
+    }
+    while (number)
+    {
+        printf("num %i\n",number->value);
+        number = number->next;
+    }
 }

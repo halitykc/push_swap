@@ -20,6 +20,7 @@ t_node	*ft_lstlast(t_node *list);
 
 //parsing
 t_node	*parse_args(char *arg);
+t_node	*parse_args_from_argv(int argc, char **argv);
 long	ft_strtol(const char *str, char **endptr);
 
 
