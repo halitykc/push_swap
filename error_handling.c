@@ -40,7 +40,7 @@ int	has_duplicate(t_node *head, int value)
 
 void	*error_msg(void)
 {
-	printf("ERROR\n");
+	printf("Error\n");
 	return NULL;
 }
 
