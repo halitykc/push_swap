@@ -1,0 +1,30 @@
+
+
+#ifndef PUSH_SWAP_H
+#define PUSH_SWAP_H
+
+
+//libs
+#include <stdlib.h>
+#include <stdio.h>
+#include <limits.h> // INT_MIN, INT_MAX
+
+typedef struct s_node
+{
+	int				value;
+	struct s_node	*next;
+}	t_node;
+void	ft_lstadd_back(t_node **lst, t_node *new);
+t_node	*ft_lstnew(int content);
+t_node	*ft_lstlast(t_node *list);
+
+//parsing
+t_node	*parse_args(char *arg);
+long	ft_strtol(const char *str, char **endptr);
+
+
+// error handling
+int validate_numbers(char *arg);
+
+
+#endif
