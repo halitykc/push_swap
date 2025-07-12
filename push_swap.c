@@ -13,18 +13,17 @@
 int main(int ac, char **av)
 {
     t_node * number;
-
-    if (ac == 2 && validate_numbers(av[1])) // string dizisinde int değerler verilmiş demek
+    char *argss;
+    
+    argss = ft_strjoin(ac-1,av+1, " ");
+    if (ac >= 2 && validate_numbers(argss)) // string dizisinde int değerler verilmiş demek
     {
-        number = parse_args(av[1]);
-    }
-    else if (ac > 2)
-    {
-        number = parse_args_from_argv(ac,av);
-    }
-    while (number)
-    {
-        printf("num %i\n",number->value);
-        number = number->next;
-    }
+        number = parse_args(argss);
+        while (number)
+        {
+            printf("num %i\n",number->value);
+            number = number->next;
+        }
+    }   
 }
+
