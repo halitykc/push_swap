@@ -43,7 +43,12 @@ void sort_small(t_node **a)
 
 void    sort_stacks(t_node **stacka, t_node **stackb, int size)
 {
-    (void)stackb;
+    //(void)stackb;
     if (size <= 3)
         sort_small(stacka);
+	else if (size > 3)
+	{
+		sort_big(stacka,stackb,size); //  todo
+	}
+	
 }

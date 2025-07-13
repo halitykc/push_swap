@@ -6,7 +6,6 @@
 
 //libs
 #include <stdlib.h>
-#include <stdio.h>
 #include <limits.h> // INT_MIN, INT_MAX
 #include <unistd.h>
 
@@ -18,12 +17,14 @@ typedef struct s_node
 {
 	int				value;
 	struct s_node	*next;
+	int				index;
 }	t_node;
 
 void	ft_lstadd_back(t_node **lst, t_node *new);
 t_node	*ft_lstnew(int content);
 t_node	*ft_lstlast(t_node *list);
 int	ft_lstsize(t_node *lst);
+void	ft_lstclear(t_node **lst);
 
 //parsing
 t_node	*parse_args(char *arg);
@@ -61,4 +62,7 @@ int is_sorted(t_node *stack);
 
 // sort 
 void    sort_stacks(t_node **stacka, t_node **stackb, int size);
+void sort_big(t_node **a, t_node **b, int size);
+
+
 #endif

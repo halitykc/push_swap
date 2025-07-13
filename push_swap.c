@@ -39,12 +39,15 @@ int main(int ac, char **av)
         if (!is_sorted(stack_a))
         {
             sort_stacks(&stack_a, &stack_b, ft_lstsize(stack_a));
+            ft_lstclear(&stack_a);
+            ft_lstclear(&stack_b);
+            exit(EXIT_SUCCESS);
         }
-        
     }
     else
     {
         error_msg_fail(argss);
+        exit(EXIT_FAIL);
     }    
 }
 
