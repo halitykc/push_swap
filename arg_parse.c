@@ -42,7 +42,7 @@ t_node	*parse_args(char *arg)
 			value = ft_strtol(arg, &endptr);
 			new = ft_lstnew(ft_strtol(arg, &endptr));
 			if (!new || has_duplicate(head, (int)value))
-				return (error_msg()); // Hata yönetimi eklenmeli
+				return (NULL); // Hata yönetimi eklenmeli
 			ft_lstadd_back(&head, new);
 			arg = endptr;
 		}

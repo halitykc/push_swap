@@ -8,6 +8,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <limits.h> // INT_MIN, INT_MAX
+#include <unistd.h>
+
+#define EXIT_FAIL 1
+#define EXIT_SUCCESS 0
 
 //linkedlist
 typedef struct s_node
@@ -19,10 +23,10 @@ typedef struct s_node
 void	ft_lstadd_back(t_node **lst, t_node *new);
 t_node	*ft_lstnew(int content);
 t_node	*ft_lstlast(t_node *list);
+int	ft_lstsize(t_node *lst);
 
 //parsing
 t_node	*parse_args(char *arg);
-t_node	*parse_args_from_argv(int argc, char **argv);
 long	ft_strtol(const char *str, char **endptr);
 char	*ft_strjoin(int size, char **strs, char *sep);
 
@@ -31,12 +35,30 @@ char	*ft_strjoin(int size, char **strs, char *sep);
 unsigned long validate_numbers(char *arg);
 int	has_duplicate(t_node *head, int value);
 void	*error_msg(void);
+void	error_msg_fail(char *str);
 
 
 // PS Functions
-void	ft_swap(t_node **stack);
-void	ft_push(t_node **from, t_node **to);
-void	ft_rotate(t_node **stack);
-void	ft_reverse_rotate(t_node **stack);
+void	ft_swap_a(t_node **stack);
+void	ft_push_a(t_node **from, t_node **to);
+void	ft_rotate_a(t_node **stack);
+void	ft_reverse_rotate_a(t_node **stack);
 
+void	ft_swap_b(t_node **stack);
+void	ft_push_b(t_node **from, t_node **to);
+void	ft_rotate_b(t_node **stack);
+void	ft_reverse_rotate_b(t_node **stack);
+
+void	ft_swap_ab(t_node **a,t_node **b); //todo
+void	ft_rotate_ab(t_node **a,t_node **b);
+void	ft_reverse_rotate_ab(t_node **a,t_node **b);
+
+
+//init
+int    ft_stacks_init(t_node **stack_a, t_node ** stack_b, char **args);
+int is_sorted(t_node *stack);
+
+
+// sort 
+void    sort_stacks(t_node **stacka, t_node **stackb, int size);
 #endif

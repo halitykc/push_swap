@@ -38,3 +38,16 @@ void	ft_lstadd_back(t_node **lst, t_node *new)
 	else
 		*lst = new;
 }
+
+int	ft_lstsize(t_node *lst)
+{
+	int	i;
+
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
+}
