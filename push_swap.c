@@ -12,19 +12,6 @@ static int is_sorted(t_node *stack)
 	}
 	return 1;
 }
-/*
-    SUMMARY
-    şimdi 2 arguman olarak veriler sayıları düzgün bir şekilde aliyor sıkıntı yok hatali sayı veya
-    sayı olmayan birşeyler girdiğimde hatta veriyor burasıda okey max min int değerlerinde saygılı
-    şimdilik bu kadar
-
-
-    -fonksiyonlar çalışıyor.
-    -linkedlist doğru sıralanıyor
-    -initialize doğru çalışıyor stack a doğru bir şekilde ekleniyor
-    -Kucuk Sayılar sortlaniyor 3'e kadar olanlar
-    
-*/
 
 int main(int ac, char **av)
 {
@@ -33,7 +20,7 @@ int main(int ac, char **av)
 
     char *argss;
     argss = ft_strjoin(ac-1,av+1, " ");
-    if (ac >= 2 && validate_numbers(argss)) // string dizisinde int değerler verilmiş demek
+    if (ac >= 2 && validate_numbers(argss))
     {
         ft_stacks_init(&stack_a, &stack_b, &argss);
         if (!is_sorted(stack_a))

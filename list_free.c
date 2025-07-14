@@ -5,7 +5,6 @@ static void	ft_lstdelone(t_node *lst)
 {
 	if (!lst)
 		return ;
-	//del(lst->content);
 	free(lst);
 }
 

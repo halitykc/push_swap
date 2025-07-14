@@ -50,7 +50,7 @@ void	sort_fiveorfour(t_node **a, t_node **b)
 		ft_push_b(a, b);
 		size--;
 	}
-	sort_small(a); // sort_three gibi çalışır
+	sort_small(a);
 	while (*b)
 		ft_push_a(b, a);
 }
