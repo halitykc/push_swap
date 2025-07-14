@@ -3,14 +3,14 @@
 #ifndef PUSH_SWAP_H
 #define PUSH_SWAP_H
 
-
 //libs
 #include <stdlib.h>
-#include <limits.h> // INT_MIN, INT_MAX
 #include <unistd.h>
 
 #define EXIT_FAIL 1
 #define EXIT_SUCCESS 0
+#define INT_MIN -2147483648
+#define INT_MAX 2147483647
 
 //linkedlist
 typedef struct s_node
@@ -35,20 +35,17 @@ char	*ft_strjoin(int size, char **strs, char *sep);
 // error handling
 unsigned long validate_numbers(char *arg);
 int	has_duplicate(t_node *head, int value);
-void	*error_msg(void);
 void	error_msg_fail(char *str);
 
 
 // PS Functions
-void	ft_swap_a(t_node **stack);
-void	ft_push_a(t_node **from, t_node **to);
-void	ft_rotate_a(t_node **stack);
-void	ft_reverse_rotate_a(t_node **stack);
+void	ft_swap_a(t_node **stack);				
+void	ft_push_a(t_node **from, t_node **to);	
+void	ft_rotate_a(t_node **stack);			
+void	ft_reverse_rotate_a(t_node **stack);	
 
-void	ft_swap_b(t_node **stack);
-void	ft_push_b(t_node **from, t_node **to);
-void	ft_rotate_b(t_node **stack);
-void	ft_reverse_rotate_b(t_node **stack);
+void	ft_push_b(t_node **from, t_node **to);	
+
 
 //init
 int    ft_stacks_init(t_node **stack_a, t_node ** stack_b, char **args);
