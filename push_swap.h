@@ -50,11 +50,6 @@ void	ft_push_b(t_node **from, t_node **to);
 void	ft_rotate_b(t_node **stack);
 void	ft_reverse_rotate_b(t_node **stack);
 
-void	ft_swap_ab(t_node **a,t_node **b); //todo
-void	ft_rotate_ab(t_node **a,t_node **b);
-void	ft_reverse_rotate_ab(t_node **a,t_node **b);
-
-
 //init
 int    ft_stacks_init(t_node **stack_a, t_node ** stack_b, char **args);
 int is_sorted(t_node *stack);
