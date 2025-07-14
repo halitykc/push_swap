@@ -40,7 +40,7 @@ t_node	*parse_args(char *arg)
 		if (*arg)
 		{
 			value = ft_strtol(arg, &endptr);
-			new = ft_lstnew(ft_strtol(arg, &endptr));
+			new = ft_lstnew((int)value);
 			if (!new || has_duplicate(head, (int)value))
 				return (NULL); // Hata yönetimi eklenmeli
 			ft_lstadd_back(&head, new);

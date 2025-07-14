@@ -63,6 +63,7 @@ int is_sorted(t_node *stack);
 // sort 
 void    sort_stacks(t_node **stacka, t_node **stackb, int size);
 void sort_big(t_node **a, t_node **b, int size);
-
+void sort_small(t_node **a);
+void	sort_fiveorfour(t_node **a, t_node **b);
 
 #endif
