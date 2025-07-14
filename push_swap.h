@@ -52,7 +52,6 @@ void	ft_reverse_rotate_b(t_node **stack);
 
 //init
 int    ft_stacks_init(t_node **stack_a, t_node ** stack_b, char **args);
-int is_sorted(t_node *stack);
 
 
 // sort 

@@ -1,8 +1,6 @@
 
 #include "push_swap.h"
 
-
-
 int    ft_stacks_init(t_node **stack_a, t_node ** stack_b, char **args)
 {
     *stack_a = NULL;

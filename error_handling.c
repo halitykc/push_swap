@@ -16,7 +16,7 @@ unsigned long validate_numbers(char *arg)
 		{
 			value = ft_strtol(arg, &endptr);
             if (endptr == arg)
-                return (0); //sayı okunmazsa örnek "abc" burada endptr mevcut ptr gösterirse çünkü strtol ilerlemicek
+                return (0);
 			if (value < INT_MIN || value > INT_MAX)
 				return (0);
 			arg = endptr;
@@ -32,16 +32,10 @@ int	has_duplicate(t_node *head, int value)
 	while (head)
 	{
 		if (head->value == value)
-			return (1); // Tekrar bulundu
+			return (1); 
 		head = head->next;
 	}
-	return (0); // Tekrar yok
-}
-
-void	*error_msg(void)
-{
-	write(2, "Error\n", 6);
-	return NULL;
+	return (0);
 }
 
 void	error_msg_fail(char *str)
