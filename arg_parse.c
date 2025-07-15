@@ -1,11 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   arg_parse.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hyakici <hyakici@student.42istanbul.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/15 15:56:13 by hyakici           #+#    #+#             */
+/*   Updated: 2025/07/15 15:56:13 by hyakici          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
 long	ft_strtol(const char *str, char **endptr)
 {
-	long	result = 0;
-	int		sign = 1;
+	long	result;
+	int		sign;
 
+	result = 0;
+	sign = 1;
 	while (*str == ' ' || (*str >= 9 && *str <= 13))
 		str++;
 	if (*str == '-' || *str == '+')
@@ -21,16 +34,15 @@ long	ft_strtol(const char *str, char **endptr)
 	}
 	if (endptr)
 		*endptr = (char *)str;
-	return result * sign;
+	return (result * sign);
 }
-
 
 t_node	*parse_args(char *arg)
 {
 	t_node	*head;
 	t_node	*new;
 	char	*endptr;
-	long value;
+	long	value;
 
 	head = NULL;
 	while (*arg)
@@ -47,5 +59,5 @@ t_node	*parse_args(char *arg)
 			arg = endptr;
 		}
 	}
-	return head;
+	return (head);
 }

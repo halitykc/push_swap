@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hyakici <hyakici@student.42istanbul.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/15 15:56:08 by hyakici           #+#    #+#             */
+/*   Updated: 2025/07/15 15:56:09 by hyakici          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 static void	sort_two(t_node **a)
@@ -8,9 +20,9 @@ static void	sort_two(t_node **a)
 
 static void	sort_three(t_node **a)
 {
-	int f;
-	int s ;
-	int t;
+	int	f;
+	int	s;
+	int	t;
 
 	s = (*a)->next->value;
 	t = (*a)->next->next->value;
@@ -33,7 +45,7 @@ static void	sort_three(t_node **a)
 		ft_rotate_a(a);
 }
 
-void sort_small(t_node **a)
+void	sort_small(t_node **a)
 {
 	if ((*a)->next->next == NULL)
 		sort_two(a);
@@ -41,12 +53,12 @@ void sort_small(t_node **a)
 		sort_three(a);
 }
 
-void    sort_stacks(t_node **stacka, t_node **stackb, int size)
+void	sort_stacks(t_node **stacka, t_node **stackb, int size)
 {
-    if (size <= 3)
-        sort_small(stacka);
+	if (size <= 3)
+		sort_small(stacka);
 	else if (size <= 5)
-		sort_fiveorfour(stacka,stackb);
+		sort_fiveorfour(stacka, stackb);
 	else if (size > 5)
-		sort_big(stacka,stackb,size);
+		sort_big(stacka, stackb, size);
 }

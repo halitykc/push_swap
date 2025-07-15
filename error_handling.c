@@ -1,13 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   error_handling.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hyakici <hyakici@student.42istanbul.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/15 15:56:18 by hyakici           #+#    #+#             */
+/*   Updated: 2025/07/15 15:56:19 by hyakici          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
-unsigned long validate_numbers(char *arg)
+unsigned long	validate_numbers(char *arg)
 {
-	char *endptr;
-	long value;
+	char	*endptr;
+	long	value;
 
 	if (!*arg)
-		return	(0);
+		return (0);
 	while (*arg)
 	{
 		while (*arg == ' ')
@@ -15,13 +26,13 @@ unsigned long validate_numbers(char *arg)
 		if (*arg)
 		{
 			value = ft_strtol(arg, &endptr);
-            if (endptr == arg)
-                return (0);
+			if (endptr == arg)
+				return (0);
 			if (value < INT_MIN || value > INT_MAX)
 				return (0);
 			arg = endptr;
-            if (*arg && *arg != ' ')
-                return (0);
+			if (*arg && *arg != ' ')
+				return (0);
 		}
 	}
 	return (1);
@@ -32,7 +43,7 @@ int	has_duplicate(t_node *head, int value)
 	while (head)
 	{
 		if (head->value == value)
-			return (1); 
+			return (1);
 		head = head->next;
 	}
 	return (0);

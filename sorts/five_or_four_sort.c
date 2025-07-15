@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   five_or_four_sort.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hyakici <hyakici@student.42istanbul.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/15 15:56:01 by hyakici           #+#    #+#             */
+/*   Updated: 2025/07/15 15:56:03 by hyakici          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../push_swap.h"
 
@@ -39,8 +50,8 @@ static void	move_min_to_top(t_node **a, int min)
 
 void	sort_fiveorfour(t_node **a, t_node **b)
 {
-	int		size;
-	int		min;
+	int	size;
+	int	min;
 
 	size = ft_lstsize(*a);
 	while (size > 3)
