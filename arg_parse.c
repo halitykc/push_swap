@@ -6,7 +6,7 @@
 /*   By: hyakici <hyakici@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 15:56:13 by hyakici           #+#    #+#             */
-/*   Updated: 2025/07/16 14:24:53 by hyakici          ###   ########.fr       */
+/*   Updated: 2025/07/16 15:39:14 by hyakici          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,6 @@ t_node	*parse_args(char *arg)
 	head = NULL;
 	while (*arg)
 	{
-		while (*arg == ' ')
-			arg++;
 		if (*arg)
 		{
 			value = ft_strtol(arg, &endptr);

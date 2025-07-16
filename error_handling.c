@@ -6,7 +6,7 @@
 /*   By: hyakici <hyakici@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 15:56:18 by hyakici           #+#    #+#             */
-/*   Updated: 2025/07/16 14:23:34 by hyakici          ###   ########.fr       */
+/*   Updated: 2025/07/16 15:39:11 by hyakici          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ unsigned long	validate_numbers(char *arg)
 		return (0);
 	while (*arg)
 	{
-		while (*arg == ' ')
-			arg++;
 		if (*arg)
 		{
 			value = ft_strtol(arg, &endptr);
