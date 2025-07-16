@@ -6,7 +6,7 @@
 /*   By: hyakici <hyakici@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 15:56:47 by hyakici           #+#    #+#             */
-/*   Updated: 2025/07/15 15:56:48 by hyakici          ###   ########.fr       */
+/*   Updated: 2025/07/16 14:00:06 by hyakici          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ long				ft_strtol(const char *str, char **endptr);
 char				*ft_strjoin(int size, char **strs, char *sep);
 
 unsigned long		validate_numbers(char *arg);
-int					has_duplicate(t_node *head, int value);
-void				error_msg_fail(char *str);
+int					has_duplicate(t_node **head, int value);
+void				error_msg_fail(char **str);
 
 void				ft_swap_a(t_node **stack);
 void				ft_push_a(t_node **from, t_node **to);

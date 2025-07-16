@@ -6,7 +6,7 @@
 /*   By: hyakici <hyakici@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 15:56:18 by hyakici           #+#    #+#             */
-/*   Updated: 2025/07/15 15:56:19 by hyakici          ###   ########.fr       */
+/*   Updated: 2025/07/16 14:23:34 by hyakici          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,20 +38,26 @@ unsigned long	validate_numbers(char *arg)
 	return (1);
 }
 
-int	has_duplicate(t_node *head, int value)
+int	has_duplicate(t_node **head, int value)
 {
-	while (head)
+	t_node	*s;
+
+	s = *head;
+	while (s)
 	{
-		if (head->value == value)
+		if (s->value == value)
+		{
+			ft_lstclear(head);
 			return (1);
-		head = head->next;
+		}
+		s = s->next;
 	}
 	return (0);
 }
 
-void	error_msg_fail(char *str)
+void	error_msg_fail(char **str)
 {
-	free(str);
+	free(*str);
 	write(2, "Error\n", 6);
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: hyakici <hyakici@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 15:56:13 by hyakici           #+#    #+#             */
-/*   Updated: 2025/07/15 15:56:13 by hyakici          ###   ########.fr       */
+/*   Updated: 2025/07/16 14:24:53 by hyakici          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,11 @@ t_node	*parse_args(char *arg)
 		{
 			value = ft_strtol(arg, &endptr);
 			new = ft_lstnew((int)value);
-			if (!new || has_duplicate(head, (int)value))
+			if (!new || has_duplicate(&head, (int)value))
+			{
+				free(new);
 				return (NULL);
+			}
 			ft_lstadd_back(&head, new);
 			arg = endptr;
 		}
